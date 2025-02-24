@@ -7,6 +7,6 @@
 version: 2
 updates:
  - package-ecosystem: "devcontainers"
-   directory: "/"
+   directory: "/home/siee/wwwroot/"
    schedule:
      interval: weekly
