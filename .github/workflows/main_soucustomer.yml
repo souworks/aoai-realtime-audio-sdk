@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy Node.js app to Azure Web App - soucustomer
 
 on:
@@ -25,12 +22,13 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          cd aoai-realtime-audio-sdk  # サブディレクトリに移動
           npm install
           npm run build --if-present
           npm run test --if-present
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: zip release.zip ./aoai-realtime-audio-sdk/* -r
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -55,8 +53,10 @@ jobs:
           name: node-app
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip
-      
+        run: |
+          unzip release.zip
+          cd aoai-realtime-audio-sdk  # サブディレクトリに移動
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -70,5 +70,4 @@ jobs:
         with:
           app-name: 'soucustomer'
           slot-name: 'Production'
-          package: '/home/site/wwwroot/'
-          
+          package: aoai-realtime-audio-sdk  # サブディレクトリを指定
