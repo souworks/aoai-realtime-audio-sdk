@@ -28,7 +28,7 @@ jobs:
           npm run test --if-present
 
       - name: Zip artifact for deployment
-        run: zip release.zip /home/site/wwwroot/aoai-realtime-audio-sdk/* -r
+        run: zip release.zip /home/runner/work/aoai-realtime-audio-sdk/* -r
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
