@@ -55,7 +55,7 @@ jobs:
       - name: Unzip artifact for deployment
         run: |
           unzip release.zip
-          cd /home/site/wwwroot/aoai-realtime-audio-sdk  # サブディレクトリに移動
+          cd /home/runner/work/aoai-realtime-audio-sdk/aoai-realtime-audio-sdk  # サブディレクトリに移動
 
       - name: Login to Azure
         uses: azure/login@v2
