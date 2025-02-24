@@ -70,4 +70,4 @@ jobs:
         with:
           app-name: 'soucustomer'
           slot-name: 'Production'
-          package: aoai-realtime-audio-sdk  # サブディレクトリを指定
+          package: aoai-realtime-audio-sdk/javascript/samples/web # サブディレクトリを指定
