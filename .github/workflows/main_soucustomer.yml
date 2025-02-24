@@ -70,4 +70,4 @@ jobs:
         with:
           app-name: 'soucustomer'
           slot-name: 'Production'
-          package: /home/runner/work/aoai-realtime-audio-sdk # サブディレクトリを指定
+          package: /home/runner/work/ # サブディレクトリを指定
