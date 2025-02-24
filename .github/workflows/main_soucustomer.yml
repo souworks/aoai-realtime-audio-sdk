@@ -28,7 +28,7 @@ jobs:
           npm run test --if-present
 
       - name: Zip artifact for deployment
-        run: zip release.zip /home/runner/work/aoai-realtime-audio-sdk/* -r
+        run: zip release.zip /home/site/wwwroot/aoai-realtime-audio-sdk/* -r
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -55,7 +55,7 @@ jobs:
       - name: Unzip artifact for deployment
         run: |
           unzip release.zip
-          cd /home/runner/work/aoai-realtime-audio-sdk  # サブディレクトリに移動
+          cd /home/site/wwwroot/aoai-realtime-audio-sdk  # サブディレクトリに移動
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -70,4 +70,4 @@ jobs:
         with:
           app-name: 'soucustomer'
           slot-name: 'Production'
-          package: /home/runner/work/aoai-realtime-audio-sdk # サブディレクトリを指定
+          package: /home/site/wwwroot/aoai-realtime-audio-sdk # サブディレクトリを指定
