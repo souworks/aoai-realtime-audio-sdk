@@ -22,21 +22,21 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd aoai-realtime-audio-sdk/javascript/samples/web
+          cd /home/runner/work/aoai-realtime-audio-sdk/aoai-realtime-audio-sdk/javascript/samples/web
           npm install
           npm run build --if-present
           npm run test --if-present
 
       - name: Zip artifact for deployment
         run: |
-          cd aoai-realtime-audio-sdk
-          zip -r ../release.zip .
+          cd /home/runner/work/aoai-realtime-audio-sdk/aoai-realtime-audio-sdk/javascript/samples/web
+          zip -r ../../../../release.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: release.zip
+          path: /home/runner/work/aoai-realtime-audio-sdk/release.zip
 
   deploy:
     runs-on: ubuntu-latest
