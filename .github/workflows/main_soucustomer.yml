@@ -22,7 +22,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd /home/runner/work/aoai-realtime-audio-sdk/aoai-realtime-audio-sdk/javascript/samples/web/  # サブディレクトリに移動
+          cd /home/runner/work/aoai-realtime-audio-sdk/aoai-realtime-audio-sdk/  # サブディレクトリに移動
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -55,7 +55,7 @@ jobs:
       - name: Unzip artifact for deployment
         run: |
           unzip release.zip
-          cd /home/runner/work/aoai-realtime-audio-sdk/aoai-realtime-audio-sdk/javascript/samples/web/  # サブディレクトリに移動
+          cd /home/runner/work/aoai-realtime-audio-sdk/aoai-realtime-audio-sdk/  # サブディレクトリに移動
 
       - name: Login to Azure
         uses: azure/login@v2
