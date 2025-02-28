@@ -7,7 +7,7 @@
     "dev": "vite --host",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "format": "prettier --write src public"
+    "format": "prettier --write src public",
     "start": "vite preview --host 0.0.0.0 --port $PORT"
   },
   "devDependencies": {
