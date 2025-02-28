@@ -8,6 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "format": "prettier --write src public"
+    "start": "vite preview --host 0.0.0.0 --port $PORT"
   },
   "devDependencies": {
     "@types/audioworklet": "^0.0.57",
