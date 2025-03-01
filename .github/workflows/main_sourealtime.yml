@@ -22,14 +22,14 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd $Env:GITHUB_WORKSPACE\aoai-realtime-audio-sdk\javascript\samples\web
+          cd $Env:GITHUB_WORKSPACE\javascript\samples\web
           npm install
           npm run build --if-present
           npm run test --if-present
 
       - name: Zip artifact for deployment
         run: |
-          Compress-Archive -Path $Env:GITHUB_WORKSPACE\aoai-realtime-audio-sdk\javascript\samples\web\* -DestinationPath $Env:GITHUB_WORKSPACE\release.zip
+          Compress-Archive -Path $Env:GITHUB_WORKSPACE\javascript\samples\web\* -DestinationPath $Env:GITHUB_WORKSPACE\release.zip
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
