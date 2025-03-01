@@ -1,4 +1,4 @@
-name: Build and deploy Node.js app to Azure Web App - sourealtime
+name: Build and deploy Node.js app to Azure Web App - aoai-realtime-audio-sdk
 
 on:
   push:
@@ -64,6 +64,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'sourealtime'
+          app-name: 'aoai-realtime-audio-sdk'
           slot-name: 'Production'
           package: release.zip
